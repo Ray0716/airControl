@@ -38,6 +38,9 @@ Use your computer like you use an Apple Vision Pro!
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
+  - [Features](#features)
+  - [Notes](#notes)
+- [Roadmap](#roadmap)
 - [Contributing](#contributing)
 - [License](#license)
 - [Contact](#contact)
@@ -102,6 +105,20 @@ Please follow the following steps for successful installation:
 
 
    Now, your AirControl App should be successfully up and running!
+
+
+### Features
+
+* Wave hand to move cursor
+* Pinch with thumb and index finger to click mouse
+* Pinch & Drag with thumb and middle finger to drag mouse
+* Make fist to show all applications
+
+### Notes
+
+* When using this version of AirControl, **make sure your entire hand is visible to the camera and is oriented orthagonally to the camera**. (eg, it should see your palm clearly).
+* When makign pinching gestures, sometimes rotating you hand slightly to the left helps. (to the right if you are using your left hand)
+* If you are using your left hand, **set the x-offset to 0.1 instead of -0.1**. 
 
 ## Roadmap
 
