@@ -1,7 +1,7 @@
 <br/>
 <div align="center">
 <a href="h[ttps://github.com/ShaanCoding/makeread.me](https://github.com/Ray0716/teenhacks-2025)">
-<img src="logo.png" alt="Logo" width="280" height=auto>
+<img src="logo.png" alt="Logo" width="200" height=auto>
 </a>
 <h1 align="center">AirControl</h3>
 <p align="center">
