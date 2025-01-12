@@ -47,19 +47,14 @@ Use your computer like you use an Apple Vision Pro!
 
 ![Screenshot](demo.png)
 
-One of the challenges with building and contributing to open source software is that while many projects have amazing functionalities, they often miss out on reaching a wider audience due to lack of clear and user-friendly installation instructions. In addition, lack of efficient showcase of their use cases also contribute to the lower reach of these projects.
+The Apple Vision Pro introduced a novel type of computer-human interaction. Using hand gestures to control user interfaces was a method that was never seen before. This project brings this unique type of user interaction to normal computers, not just VR devices. 
 
-While there are ReadME templates that can help address this, the process of manually filling out these templates can be time-consuming and tedious. That&#39;s where our project makeread.me comes in.
+AirControl is designed to:
 
-Introducing makeread.me, an automated ReadMe Generator that can revolutionize how you create your project documentation. It is designed to:
+- Introduce hand gesture recgonition based user interaction to laptop and desktop computers
+- Make workflows more efficient 
+- Improve accesibility for people who are not able to use mouses/keyboards
 
-- Save your valuable time enhancing your focus on development,
-- Automate redundant tasks, and,
-- Implement DRY (Don&#39;t Repeat Yourself) principles to your documentation.
-
-It&#39;s free, open-source, and highly customizable. Feel free to modify our templates to fit your needs. If you find that a particular component is missing, you are more than welcome to contribute and expand the project.
-
-We&#39;ve made it easy for you to contribute to the project by using Nunjucks and JSON templates for programmatic mapping. Enjoy the benefits of clear and concise project documentation with makeread.me!
 
 ### Built With
 
