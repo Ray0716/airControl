@@ -13,7 +13,6 @@ mp_drawing = mp.solutions.drawing_utils
 
 cap = cv2.VideoCapture(0)  # Use the default webcam
 
-
 # Get screen dimensions
 screen_width, screen_height = pyautogui.size()
 
