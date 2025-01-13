@@ -108,14 +108,14 @@ def enable_fist():
 mouse_down = False 
 
 coordinate_history = [] # get a log of history of positions 
-deadzone = 0.006
+deadzone = 0.002
 
 stabilized_x = 0.5
 stabilized_y = 0.5
 
 stabilization_watch_back_index = 5 # NEEDS TO BE LESS THAN THE LENGHT OF WATCH BACKHISTORY STACK!!!!!
 
-averaging_amount = 5
+averaging_amount = 10
 
 while cap.isOpened():
     success, frame = cap.read()
@@ -177,8 +177,8 @@ while cap.isOpened():
 
 
             # Map x, y to screen coordinates
-            screen_x = int(stabilized_x * screen_width)
-            screen_y = int(stabilized_y * screen_height)
+            screen_x = int(stabilized_x * (screen_width+280))
+            screen_y = int(stabilized_y * (screen_height+250))
 
 
             # if not first time, add deadzonewatchack x and y
