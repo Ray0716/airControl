@@ -43,7 +43,7 @@ def is_pinch_index_finger(landmarks):
     distance = ((thumb_tip.x - index_tip.x) ** 2 + (thumb_tip.y - index_tip.y) ** 2 + (thumb_tip.z - index_tip.z) ** 2) ** 0.5
 
     # Define a threshold for the pinch (this value may need to be adjusted)
-    pinch_threshold = 0.05
+    pinch_threshold = 0.1
 
     # Return True if the distance between the thumb and index tip is smaller than the threshold
     
@@ -64,6 +64,21 @@ def is_pinch_middle_finger(landmarks):
 
     # Calculate the Euclidean distance between thumb_tip and index_tip
     distance = ((thumb_tip.x - middle_tip.x) ** 2 + (thumb_tip.y - middle_tip.y) ** 2 + (thumb_tip.z - middle_tip.z) ** 2) ** 0.5
+
+    # Define a threshold for the pinch (this value may need to be adjusted)
+    pinch_threshold = 0.1
+
+    # Return True if the distance between the thumb and middle tip is smaller than the threshold
+    return distance < pinch_threshold
+
+
+def is_pinch_ring_finger(landmarks):
+    # Get the thumb and index finger tip landmarks
+    thumb_tip = landmarks.landmark[mp_hands.HandLandmark.THUMB_TIP]
+    ring_tip = landmarks.landmark[mp_hands.HandLandmark.RING_FINGER_TIP]
+
+    # Calculate the Euclidean distance between thumb_tip and index_tip
+    distance = ((thumb_tip.x - ring_tip.x) ** 2 + (thumb_tip.y - ring_tip.y) ** 2 + (thumb_tip.z - ring_tip.z) ** 2) ** 0.5
 
     # Define a threshold for the pinch (this value may need to be adjusted)
     pinch_threshold = 0.1
@@ -177,8 +192,8 @@ while cap.isOpened():
 
 
             # Map x, y to screen coordinates
-            screen_x = int(stabilized_x * (screen_width+280))
-            screen_y = int(stabilized_y * (screen_height+250))
+            screen_x = int(stabilized_x * (screen_width+140))
+            screen_y = int(stabilized_y * (screen_height+100))
 
 
             # if not first time, add deadzonewatchack x and y
@@ -201,10 +216,12 @@ while cap.isOpened():
 
             pinchIndex = is_pinch_index_finger(hand_landmarks)
             pinchMiddle = is_pinch_middle_finger(hand_landmarks)
+            pinchRing = is_pinch_ring_finger(hand_landmarks)
             isFist = is_fist(hand_landmarks)
 
             #print(pinchIndex, pinchMiddle, coordinate_history)
             print(pinchIndex, pinchMiddle, isFist, x_val_avg_list, y_val_avg_list)
+
 
             
             if pinchIndex:
@@ -219,7 +236,7 @@ while cap.isOpened():
                 # pyautogui.mouseDown(start_x, start_y)
                 if not mouse_down:
                     mouse_down = True
-                    pyautogui.mouseDown(screen_x, screen_y)
+                    pyautogui.mouseDown(screen_x, screen_y) # remove button=middle
                 """ else:
                     pyautogui.moveTo(start_x, start_y)
                     print(f"Mouse moved to ({start_x}, {start_y})")"""
@@ -232,6 +249,8 @@ while cap.isOpened():
                 if mouse_down: # do we need this condition?
                     pyautogui.mouseUp()
                     mouse_down = False
+
+
 
             if isFist:
                 pyautogui.hotkey('ctrl', 'up')
