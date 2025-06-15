@@ -8,7 +8,9 @@
 Use your computer like you use an Apple Vision Pro!
 <br/>
 <br/>
-<a href="https://google"><strong>Explore the nonexistent docs »</strong></a>
+
+<img src="airControlDemo.gif" height=320 width=auto>
+
 <br/>
 <br/>
 <a href="https://vimeo.com/1046241035?share=copy">View Demo .</a>  
